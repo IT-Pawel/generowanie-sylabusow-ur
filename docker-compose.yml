@@ -13,7 +13,7 @@ services:
         extra_hosts:
             - "host.docker.internal:host-gateway"
         networks:
-            - app
+            - uth
     db:
         image: mariadb:10.3
         container_name: db
@@ -29,7 +29,7 @@ services:
             - ./docker/mariadb/conf.d:/etc/mysql/conf.d
             - ./docker/mariadb/dump:/docker-dump
         networks:
-            - app
+            - uth
     nginx:
         build:
             context: ./docker/nginx
@@ -45,13 +45,13 @@ services:
             - ./docker/nginx/conf.d:/etc/nginx/conf.d/
             - ./docker/nginx/data:/etc/nginx/data/
         networks:
-            - app
+            - uth
     redis:
         image: redis:6.2
         container_name: redis
         networks:
-            - app
+            - uth
 
 networks:
-    app:
+    uth:
         driver: bridge
