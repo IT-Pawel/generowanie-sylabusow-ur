@@ -11,7 +11,8 @@ RUN pecl install -o -f redis xdebug\
 # Install nodejs
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
-
+RUN apt-get update
+RUN apt-get install -y npm
 # Setup Laravel scheduler
 # RUN (crontab -l 2>/dev/null; echo "* * * * * cd /var/www/app && /usr/local/bin/php artisan schedule:run >> /dev/null 2>&1") | crontab -
 
