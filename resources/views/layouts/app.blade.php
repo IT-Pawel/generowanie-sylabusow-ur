@@ -4,11 +4,11 @@
         @csrf
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>Generowanie sylabusów demo</title>
-
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <script src="{{ mix('js/app.js') }}" defer></script>
         @livewireStyles
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body>
         <main class="container">

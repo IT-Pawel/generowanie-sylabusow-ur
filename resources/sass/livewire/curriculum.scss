@@ -1,0 +1,93 @@
+.curriculumForm {
+    display: flex;
+    margin: 20px 12px;
+    column-gap: 20px;
+
+    &__form {
+        flex: 30%;
+
+        label {
+            display: flex;
+            flex-direction: column;
+            &:not(:last-child){
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    &__data {
+        flex: 70%;
+
+        h1,
+        h2 {
+            margin: 0;
+            text-align: center;
+        }
+        h1{
+            font-size: 16px;;
+        }
+        h2{
+            font-size: 14px;
+        }
+        table{
+            text-align: center;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,td{
+            border: 1px solid black;
+        }
+
+        th {
+            width: 50%;
+            background: #bcf7cc;
+            padding: 12px 10px;
+            font-weight: 400;
+        }
+        td{
+            font-weight: 400;
+            &.break{
+                height: 20px;
+                background-color: grey;
+            }
+        }
+    }
+}
+
+.curriculumDisplay{
+    h1,
+    h2 {
+        margin: 0;
+        text-align: center;
+    }
+    h1{
+        font-size: 16px;;
+    }
+    h2{
+        font-size: 14px;
+    }
+    table{
+        text-align: center;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,td{
+        border: 1px solid black;
+    }
+
+    th {
+        width: 50%;
+        background: #bcf7cc;
+        padding: 12px 10px;
+        font-weight: 400;
+    }
+    td{
+        font-weight: 400;
+        &.break{
+            height: 20px;
+            background-color: grey;
+        }
+    }
+}

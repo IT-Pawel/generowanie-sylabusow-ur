@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CurriculumController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('curriculum.curriculumForm');
-});
+Route::get('/',[CurriculumController::class,'index'])->name('home');
+
+Route::get('/dodaj-syblabus',[CurriculumController::class,'addNewCurriculum']);
+
+Route::get('/sylabus/{curriculum}',[CurriculumController::class,'show']);
+Route::get('/sylabus/edit/{curriculum}',[CurriculumController::class,'edit']);
+Route::get('/sylabus/delete/{curriculum}',[CurriculumController::class,'delete']);
+Route::get('/sylabus/download/{curriculum}',[CurriculumController::class,'download']);
