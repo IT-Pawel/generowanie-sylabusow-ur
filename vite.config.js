@@ -1,13 +1,15 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-
-const host = 'uth.local'; 
+import livewire from '@defstudio/vite-livewire-plugin';
 
 export default defineConfig({
     plugins: [
         laravel({
             input: ['resources/sass/app.scss', 'resources/js/app.js'],
-            refresh: true,
+            refresh: false,
+        }),
+        livewire({ 
+            refresh: ['resources/sass/app.scss'],  
         }),
     ],
     server: {

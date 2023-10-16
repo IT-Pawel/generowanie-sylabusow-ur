@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        @csrf
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Generowanie sylabusów demo</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
+        @livewireStyles
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
-    <body class="antialiased">
-        Test
+    <body>
+        <main class="container">
+            @yield('content')
+        </main>
+        @livewireScripts
     </body>
 </html>
