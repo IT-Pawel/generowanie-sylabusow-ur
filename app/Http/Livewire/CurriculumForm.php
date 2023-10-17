@@ -12,7 +12,7 @@ class CurriculumForm extends Component
     public $formData;
     public $modelId;
 
-    public function mount($formData = [], $modelId)
+    public function mount($formData, $modelId)
     {
         $this->formData = $formData;
         if (!empty($modelId)) {

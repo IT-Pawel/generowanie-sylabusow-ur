@@ -15,7 +15,7 @@ use App\Http\Controllers\CurriculumController;
 
 Route::get('/',[CurriculumController::class,'index'])->name('home');
 
-Route::get('/dodaj-syblabus',[CurriculumController::class,'addNewCurriculum']);
+Route::get('/dodaj-sylabus',[CurriculumController::class,'addNewCurriculum']);
 
 Route::get('/sylabus/{curriculum}',[CurriculumController::class,'show']);
 Route::get('/sylabus/edit/{curriculum}',[CurriculumController::class,'edit']);

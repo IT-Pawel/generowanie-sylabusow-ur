@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    @livewire('curriculum-form', ['formData' => $formData, 'modelId'=> $modelId ])
+    @if(isset($formData))
+        @livewire('curriculum-form', ['formData' => $formData, 'modelId'=> $modelId ])
+    @else
+        @livewire('curriculum-form', ['formData' => [], 'modelId' => 0 ])
+    @endif
 @endsection
