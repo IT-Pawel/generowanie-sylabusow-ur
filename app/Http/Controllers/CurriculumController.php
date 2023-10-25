@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Curriculum;
 use Barryvdh\DomPDF\Facade\Pdf;
-use Illuminate\Http\Request;
+use App\Http\Helpers\HtmlToWord;
 
 class CurriculumController extends Controller
 {
@@ -43,5 +43,16 @@ class CurriculumController extends Controller
         $data = json_decode($curriculum->formData, true);
         $pdf = Pdf::loadView('pdf.basePdf',['formData' => $data['formData']]);
         return $pdf->download('sylabus_o_id_'.$curriculum->id.'.pdf');
+    }
+
+    public function test(Curriculum $curriculum)
+    {
+
+        $htd = new HtmlToWord();
+        $curriculum = Curriculum::find(17);
+        $data = json_decode($curriculum->formData, true);
+        $htmlContent = view('pdf.basePdf',['formData' => $data['formData']])->render();
+
+        return $htd->createDoc($htmlContent, "my-document", 1);
     }
 }
