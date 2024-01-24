@@ -2,13 +2,12 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="{{ public_path('css/app.css') }}" rel="stylesheet">
     <style>
-        * { font-family: DejaVu Sans !important; }
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .curriculumForm {

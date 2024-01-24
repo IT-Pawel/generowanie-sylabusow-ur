@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CurriculumController;
+
+use Spatie\LaravelPdf\Facades\Pdf;
+use function Spatie\LaravelPdf\Support\pdf;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +26,9 @@ Route::get('/sylabus/delete/{curriculum}',[CurriculumController::class,'delete']
 Route::get('/sylabus/download/{curriculum}',[CurriculumController::class,'download']);
 
 Route::get('/test',[CurriculumController::class,'test']);
+
+
+
+Route::get('download-invoice', function () {
+    return pdf('test')->download('invoice-for-april-2022.pdf');
+});

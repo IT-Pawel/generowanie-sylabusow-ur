@@ -54,6 +54,14 @@ services:
         container_name: redis
         networks:
             - uth
+    puppeteer:
+        build:
+            context: ./docker/node
+            dockerfile: Dockerfile
+        image: puppeteer:latest
+        container_name: puppeteer
+        networks:
+            - uth
 
 networks:
     uth:

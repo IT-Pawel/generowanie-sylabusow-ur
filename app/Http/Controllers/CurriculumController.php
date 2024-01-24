@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Curriculum;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Helpers\HtmlToWord;
+use function Spatie\LaravelPdf\Support\pdf;
+
 
 class CurriculumController extends Controller
 {
@@ -41,8 +43,13 @@ class CurriculumController extends Controller
     public function download(Curriculum $curriculum)
     {
         $data = json_decode($curriculum->formData, true);
-        $pdf = Pdf::loadView('pdf.basePdf',['formData' => $data['formData']]);
-        return $pdf->download('sylabus_o_id_'.$curriculum->id.'.pdf');
+        // $pdf = Pdf::loadView('pdf.basePdf',['formData' => $data['formData']]);
+        // return $pdf->download('sylabus_o_id_'.$curriculum->id.'.pdf');
+
+        return pdf()
+        ->view('pdf.basePdf',['formData' => $data['formData']])
+        ->name('sylabus_o_id_'.$curriculum->id.'.pdf')
+        ->download();
     }
 
     public function test(Curriculum $curriculum)
