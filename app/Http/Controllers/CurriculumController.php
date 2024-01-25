@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Curriculum;
-use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Helpers\HtmlToWord;
-use function Spatie\LaravelPdf\Support\pdf;
+use App\Beganovich\Snappdf\Snappdf;
+
 
 
 class CurriculumController extends Controller
@@ -43,13 +43,21 @@ class CurriculumController extends Controller
     public function download(Curriculum $curriculum)
     {
         $data = json_decode($curriculum->formData, true);
-        // $pdf = Pdf::loadView('pdf.basePdf',['formData' => $data['formData']]);
-        // return $pdf->download('sylabus_o_id_'.$curriculum->id.'.pdf');
+        $snappdf = new \Beganovich\Snappdf\Snappdf();
+        $cssFilePath = public_path('css/app.css'); 
+        $inlineCss = file_get_contents($cssFilePath);
 
-        return pdf()
-        ->view('pdf.basePdf',['formData' => $data['formData']])
-        ->name('sylabus_o_id_'.$curriculum->id.'.pdf')
-        ->download();
+        $html = view('curriculum.curriculumShow',['formData' => $data['formData'], 'inlineCss' => $inlineCss])->render();
+        
+        $pdf = $snappdf
+            ->setHtml($html)
+            ->generate();
+    
+        $filename = 'sylabus_o_id_'.$curriculum->id.'.pdf';
+        
+        return response()->streamDownload(function() use ($pdf) {
+            echo $pdf;
+        }, $filename, ['Content-Type' => 'application/pdf']);
     }
 
     public function test(Curriculum $curriculum)

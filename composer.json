@@ -7,12 +7,12 @@
     "require": {
         "php": "^8.1",
         "barryvdh/laravel-dompdf": "^2.0",
+        "beganovich/snappdf": "^4.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^2.12",
-        "spatie/laravel-pdf": "^1.1"
+        "livewire/livewire": "^2.12"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
