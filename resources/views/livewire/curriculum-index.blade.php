@@ -1,5 +1,4 @@
 <div>
-    Lista sylabusów
     <ul>
         @foreach ($curriculumIds as $id)
             <li>
