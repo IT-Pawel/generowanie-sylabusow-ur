@@ -1,12 +1,52 @@
-body {
+ul, li {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 9.5px;
-}
-
-textarea{
-    white-space: pre-wrap;
-}
-
-@import './livewire/curriculum.scss'
+    list-style: none;
+  }
+  
+  ul {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  li {
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    transition: all 0.3s;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+  }
+  
+  li:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+  }
+  
+  .button-add {
+    display: block;
+    width: max-content;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .button-add:hover {
+    background-color: #0056b3;
+  }
+  
