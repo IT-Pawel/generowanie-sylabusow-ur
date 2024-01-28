@@ -61,6 +61,7 @@
             font-weight: 400;
             min-height: 18px;
             padding: 8px 16px;
+            text-align: left;
         }
 
         &--name {
@@ -87,6 +88,9 @@
             &.no-padding {
                 padding: 0 !important;
             }
+            &.no-wrap{
+                white-space: pre-wrap;
+            }
         }
 
         &--ECTS {
@@ -99,6 +103,7 @@
             }
             .div1 {
                 grid-area: 1 / 1 / 2 / 2;
+                justify-content: center;
             }
 
             .div2 {
@@ -138,6 +143,25 @@
             }
 
         }
+        &--table{
+            grid-template-columns: 72% 1fr;
+            &-headings{
+                grid-template-columns: 14% 30% 14% 14% 14% 14% !important;
+            }
+            &-row{
+                grid-template-columns: 14% 30% 14% 14% 14% 14% !important;
+            }
+        }
+        &--bilans{
+            &-headings{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            &-row{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
     }
 
     .break {
@@ -153,5 +177,11 @@
             /* Just to fix the corner */
             1px 0 0 0 #000 inset,
             0 1px 0 0 #000 inset;
+    }
+    .pagebreak{
+        @media print {
+                clear: both;
+                page-break-after: always;
+        }
     }
 }

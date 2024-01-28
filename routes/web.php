@@ -23,7 +23,6 @@ Route::get('/sylabus/edit/{curriculum}',[CurriculumController::class,'edit']);
 Route::get('/sylabus/delete/{curriculum}',[CurriculumController::class,'delete']);
 Route::get('/sylabus/download/{curriculum}',[CurriculumController::class,'download']);
 
-Route::get('/test',[CurriculumController::class,'test']);
 
 
 

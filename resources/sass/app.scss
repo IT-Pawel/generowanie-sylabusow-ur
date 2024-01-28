@@ -5,4 +5,8 @@ body {
     font-size: 9.5px;
 }
 
+textarea{
+    white-space: pre-wrap;
+}
+
 @import './livewire/curriculum.scss'

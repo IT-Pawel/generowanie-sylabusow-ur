@@ -5,6 +5,10 @@ body {
   font-size: 9.5px;
 }
 
+textarea {
+  white-space: pre-wrap;
+}
+
 .curriculumForm {
   display: flex;
   margin: 20px 12px;
@@ -65,6 +69,7 @@ body {
   font-weight: 400;
   min-height: 18px;
   padding: 8px 16px;
+  text-align: left;
 }
 .curriculumForm__data .grid-item--name {
   grid-template-columns: 25% 1fr !important;
@@ -83,6 +88,9 @@ body {
 .curriculumForm__data .grid-item div.no-padding {
   padding: 0 !important;
 }
+.curriculumForm__data .grid-item div.no-wrap {
+  white-space: pre-wrap;
+}
 .curriculumForm__data .grid-item--ECTS {
   grid-template-columns: repeat(3, 1fr) !important;
   grid-template-rows: repeat(4, 1fr) !important;
@@ -94,6 +102,7 @@ body {
 }
 .curriculumForm__data .grid-item--ECTS .div1 {
   grid-area: 1/1/2/2;
+  justify-content: center;
 }
 .curriculumForm__data .grid-item--ECTS .div2 {
   grid-area: 1/2/2/3;
@@ -122,6 +131,22 @@ body {
 .curriculumForm__data .grid-item--ECTS .div10 {
   grid-area: 2/3/5/4;
 }
+.curriculumForm__data .grid-item--table {
+  grid-template-columns: 72% 1fr;
+}
+.curriculumForm__data .grid-item--table-headings {
+  grid-template-columns: 14% 30% 14% 14% 14% 14% !important;
+}
+.curriculumForm__data .grid-item--table-row {
+  grid-template-columns: 14% 30% 14% 14% 14% 14% !important;
+}
+.curriculumForm__data .grid-item--bilans-headings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.curriculumForm__data .grid-item--bilans-row {
+  grid-template-columns: repeat(3, 1fr);
+}
 .curriculumForm__data .break {
   grid-column: 1/-1;
   /* Span the break across all columns */
@@ -129,4 +154,10 @@ body {
   background-color: grey;
   border: none;
   box-shadow: 1px 0 0 0 #000, 0 1px 0 0 #000, 1px 1px 0 0 #000, 1px 0 0 0 #000 inset, 0 1px 0 0 #000 inset;
+}
+@media print {
+  .curriculumForm__data .pagebreak {
+    clear: both;
+    page-break-after: always;
+  }
 }
