@@ -19,13 +19,13 @@
             <hr> <label>Przynależność do grupy zajęć
                 <input wire:model.lazy="formData.groupAffiliation" type="text"> </label> <label>Status przedmiotu
                 <input wire:model.lazy="formData.subjectStatus" type="text"> </label> <label>Forma zajęć I
-                <input wire:model.lazy="formData.lectureType1"> </label> <label>Liczba godzin/ECTS
-                <input wire:model.lazy="formData.lectureType1ECTS"> </label> <label>Forma zajęć II
-                <input wire:model.lazy="formData.lectureType2"> </label> <label>Liczba godzin/ECTS
-                <input wire:model.lazy="formData.lectureType2ECTS"> </label> <label>Forma zajęć III
-                <input wire:model.lazy="formData.lectureType3"> </label> <label>Liczba godzin/ECTS
-                <input wire:model.lazy="formData.lectureType2ECTS"> </label> <label>Całkowita liczba ECTS
-                <input wire:model.lazy="formData.lectureECTSTotal"> </label> <label>Powiązanie przedmiotu z profilem
+                <input wire:model.lazy="formData.lectureType1" type="text"> </label> <label>Liczba godzin/ECTS
+                <input wire:model.lazy="formData.lectureType1ECTS" type="text"> </label> <label>Forma zajęć II
+                <input wire:model.lazy="formData.lectureType2" type="text"> </label> <label>Liczba godzin/ECTS
+                <input wire:model.lazy="formData.lectureType2ECTS" type="text"> </label> <label>Forma zajęć III
+                <input wire:model.lazy="formData.lectureType3" type="text"> </label> <label>Liczba godzin/ECTS
+                <input wire:model.lazy="formData.lectureType2ECTS" type="text"> </label> <label>Całkowita liczba ECTS
+                <input wire:model.lazy="formData.lectureECTSTotal" type="text"> </label> <label>Powiązanie przedmiotu z profilem
                 studiów
                 <input wire:model.lazy="formData.studyProfileConnection" type="text"> </label> <label>Powiązanie
                 przedmiotu z uprawnieniami
@@ -47,11 +47,11 @@
                 EFEKTÓW UCZENIA SIĘ</h1> <label>Cel kształcenia
                 <input wire:model.lazy="formData.lectureTarget" type="text"> </label> <label>Treści programowe
                 <b>Wykłady:</b>
-                <textarea wire:model.lazy="formData.contentLecture"></textarea>
+                <textarea cols="128" rows="25" wire:model.lazy="formData.contentLecture"></textarea>
             </label> <label>Treści programowe <b>Ćwiczenia audytoryjne:</b>
-                <textarea wire:model.lazy="formData.contentExct"></textarea>
+                <textarea cols="128" rows="25" wire:model.lazy="formData.contentExct"></textarea>
             </label> <label>Treści programowe <b>Laboratoria:</b>
-                <textarea wire:model.lazy="formData.contentLab"></textarea>
+                <textarea cols="128" rows="25" wire:model.lazy="formData.contentLab"></textarea>
             </label> <label>Metody dydaktyczne (kształcenia) <input wire:model.lazy="formData.teachingMethods"
                     type="text"> </label> <label>Rygor zaliczenia, kryteria oceny osiągniętych efektów
                 uczenia się, sposób obliczania oceny końcowej: <input wire:model.lazy="formData.passingRequirements"
@@ -79,10 +79,10 @@
                     type="text"> </label>
             <hr>
             </label> <label>Literatura <b>podstawowa:</b>
-                <textarea wire:model.lazy="formData.booksBasic"></textarea>
+                <textarea cols="128" rows="25" wire:model.lazy="formData.booksBasic"></textarea>
             </label>
             <label>Literatura <b>uzpełniająca:</b>
-                <textarea wire:model.lazy="formData.booksExtra"></textarea>
+                <textarea cols="128" rows="25" wire:model.lazy="formData.booksExtra"></textarea>
             </label>
             <br>
             <br>
@@ -104,7 +104,7 @@
             <br>
             <br>
             <label> Informacje dodatkowe, uwagi
-                <textarea wire:model.lazy="formData.ectsSummary"></textarea>
+                <textarea cols="128" rows="25" wire:model.lazy="formData.ectsSummary"></textarea>
             </label>
             <button type="submit">Zapisz sylabus</button>
         </div>
