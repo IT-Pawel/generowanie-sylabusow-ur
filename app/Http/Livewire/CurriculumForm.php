@@ -41,7 +41,7 @@ class CurriculumForm extends Component
         $dataToSave['outcomes'] = $this->formData['outcomes']; 
         $dataToSave['ectsCount'] = $this->formData['ectsCount']; 
         if (empty($this->modelId)) {
-           $test =  Curriculum::create( ["formData" => json_encode($dataToSave)] );
+            Curriculum::create( ["formData" => json_encode($dataToSave)] );
         } else {
             $model = Curriculum::find($this->modelId);
             $model->update(["formData" => json_encode($dataToSave)] );
