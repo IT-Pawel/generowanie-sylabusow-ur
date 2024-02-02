@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\Redirect;
-use App\Models\Curriculum as Model;
+use App\Models\Curriculum;
 
 
 class CurriculumForm extends Component
@@ -38,13 +38,13 @@ class CurriculumForm extends Component
     public function createCurriculum()
     {
         $dataToSave = $this->formData;
-        $dataToSave['outcomes'] = json_encode($this->formData['outcomes']); 
-        $dataToSave['outcomes'] = json_encode($this->formData['ectsCount']); 
+        $dataToSave['outcomes'] = $this->formData['outcomes']; 
+        $dataToSave['ectsCount'] = $this->formData['ectsCount']; 
         if (empty($this->modelId)) {
-            Model::create($dataToSave);
+           $test =  Curriculum::create( ["formData" => json_encode($dataToSave)] );
         } else {
-            $model = Model::find($this->modelId);
-            $model->update($dataToSave);
+            $model = Curriculum::find($this->modelId);
+            $model->update(["formData" => json_encode($dataToSave)] );
         }
 
         return redirect()->route('home');

@@ -23,7 +23,7 @@ services:
         container_name: db
         restart: unless-stopped
         environment:
-            MYSQL_DATABASE: database
+            MYSQL_DATABASE: database2
             MYSQL_ROOT_PASSWORD: password
             MYSQL_PASSWORD: password
             MYSQL_USER: database

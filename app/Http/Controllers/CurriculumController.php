@@ -47,7 +47,7 @@ class CurriculumController extends Controller
         $cssFilePath = public_path('css/app.css');
         $inlineCss = file_get_contents($cssFilePath);
 
-        $html = view('curriculum.curriculumShow', ['formData' => $data['formData'], 'inlineCss' => $inlineCss])->render();
+        $html = view('curriculum.curriculumShow', ['formData' => $data, 'inlineCss' => $inlineCss])->render();
 
         $pdf = $snappdf
             ->setHtml($html)
