@@ -13,7 +13,7 @@ class CurriculumForm extends Component
         'outcomes' => [],
         'ectsCount' => [],
     ];
-    public $modelId;
+    public int $modelId;
 
     public function mount($formData, $modelId)
     {
