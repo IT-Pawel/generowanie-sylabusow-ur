@@ -11,37 +11,37 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 class CurriculumController extends Controller
 {
 
-    public function index() : View
+    public function index() 
     {
         return view('curriculum.curriculumIndex');
     }
 
-    public function addNewCurriculum() : View
+    public function addNewCurriculum() 
     {
         return view('curriculum.curriculumForm');
     }
 
-    public function show(Curriculum $curriculum) : View
+    public function show(Curriculum $curriculum) 
     {
         $data = json_decode($curriculum->formData, true);
 
         return view('curriculum.curriculumShow', ['formData' => $data['formData']]);
     }
 
-    public function edit(Curriculum $curriculum) : View
+    public function edit(Curriculum $curriculum)
     {
         $data = json_decode($curriculum->formData, true);
 
         return view('curriculum.curriculumForm', ['formData' => $data['formData'], 'modelId' => $curriculum->id]);
     }
 
-    public function delete(Curriculum $curriculum) : Redirect
+    public function delete(Curriculum $curriculum) 
     {
         $curriculum->delete();
         return redirect()->route('home');
     }
 
-    public function download(Curriculum $curriculum) : StreamedResponse
+    public function download(Curriculum $curriculum)
     {
         $data = json_decode($curriculum->formData, true);
         $snappdf = new \Beganovich\Snappdf\Snappdf();
