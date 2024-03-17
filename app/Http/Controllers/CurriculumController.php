@@ -32,7 +32,7 @@ class CurriculumController extends Controller
     {
         $data = json_decode($curriculum->formData, true);
 
-        return view('curriculum.curriculumForm', ['formData' => $data['formData'], 'modelId' => $curriculum->id]);
+        return view('curriculum.curriculumForm', ['formData' => $data, 'modelId' => $curriculum->id]);
     }
 
     public function delete(Curriculum $curriculum) 
